@@ -14,7 +14,11 @@ const AppRoutes = [
   {
     path: '/fetch-data',
     element: <FetchData />
-  }
+    }
+  //  , {
+  //  path: '/medi',
+  //  element: <Medi />
+  //}
 ];
 
 export default AppRoutes;
