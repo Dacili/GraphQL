@@ -86,11 +86,11 @@ Child MediBtn: there are 2 ways of using data from the parent:
 ```   
 - 2nd way - you get all props, as object, and then we're accessing them like *props.rename*:
 ```
- export function MediBtn(props) {
+ export function MediBtn(propsMedi) {
     return (
         <div>
-            <p>{props.mediTxt}</p>
-            <button onClick={() => props.rename('novo ime')}>rename app title</button>
+            <p>{propsMedi.mediTxt}</p>
+            <button onClick={() => propsMedi.rename('novo ime')}>rename app title</button>
         </div>
         )
 ```
