@@ -133,7 +133,7 @@ In parent *renameTitle* function is implemented like this:
 |binding style|  style={{ border: "1pt solid red" }} |style="border: 1pt solid red"  |
 |UI| JSX  | HTML file  |
 |click event without params|  onClick={handleClick}  |  (click)="handleClick()"  |
-|click event w params|   onClick={() => handleClick('some text or object')  | (click)="handleClick('some text')"  |
+|click event w params|   onClick={() => handleClick('some text or object')  | (click)="handleClick('some text')" or (onClick)  |
 |binding variables to UI|   ```<h3>ime usera {user.name}</h3>  ``` |  ```<h3>ime usera {{user.name}}</h3> ```   |
 | variable creation and init| let [displayName, setDisplayName]=useState( 'Prvo ime');  | displayName='Prvo ime'  |
 |updating variable|   setDisplayName(newName)  | this.displayName=newName;  |
