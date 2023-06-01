@@ -93,4 +93,13 @@ Child MediBtn: there are 2 ways of using data from the parent:
             <button onClick={() => propsMedi.rename('novo ime')}>rename app title</button>
         </div>
         )
-```
+```  
+**Child to parent** - take a look at previous code, *rename* props - is actually an example of child to parent:   
+In parent *renameTitle* function is implemented like this:   
+```   
+ let [displayName, setDisplayName]=useState( 'Prvo ime');
+   
+   function renameTitle(newName) {
+        setDisplayName(newName)
+   }
+ ```     
