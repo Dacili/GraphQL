@@ -137,7 +137,7 @@ In parent *renameTitle* function is implemented like this:
 |binding variables to UI|   ```<h3>ime usera {user.name}</h3>  ``` |  ```<h3>ime usera {{user.name}}</h3> ```   |
 | variable creation and init| let [displayName, setDisplayName]=useState( 'Prvo ime');  | displayName='Prvo ime'  |
 |updating variable|   setDisplayName(newName)  | this.displayName=newName;  |
-|binding CSS classes| className  | class  |
-|binding CSS classes| className  | class  |
-|binding CSS classes| className  | class  |
-
+|parent to child (in parent)|  ```<MediBtn mediTxt="this is my first card"></MediBtn>  ``` | ``` <MediBtn [mediTxt]="this is my first card"></MediBtn>  ``` |
+|parent to child (in child)| ```export function MediBtn(propsMedi)```or ```export function MediBtn({ mediTxt }) ``` |```  @Input() mediTxt;```  |
+|child to parent (in parent)|``` className ``` |``` class ``` |
+|child to parent (in child)|``` className``` |``` class  ```|
