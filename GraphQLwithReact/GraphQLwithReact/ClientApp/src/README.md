@@ -58,5 +58,39 @@ export class Counter extends Component {
       ```
       <button onClick={() => handleClick('some text or object')}>
         ```
+   #### Add state to your component
+   If you want your component to “remember” some information and display it, you need state.  
+      <img src="https://github.com/Dacili/GraphQL/assets/37112852/6c628aa4-810a-4949-b75a-f4bd488fa9f0"  width="250" height="250">  
    
-
+#### Sharing data between components   
+**Parent to child**   
+Parent:
+ ```
+ return (
+        <>
+            <MediBtn rename={renameTitle} mediTxt="this is my first card"></MediBtn>
+        </>
+        )
+```   
+   
+Child MediBtn: there are 2 ways of using data from the parent:  
+- 1st way - you use exact names that were send with props inside {}:  
+```
+ export function MediBtn({ rename, mediTxt }) {
+    return (
+        <div>
+            <p>{mediTxt}</p>
+            <button onClick={() => rename('novo ime')}>rename app title</button>
+        </div>
+            )
+```   
+- 2nd way - you get all props, as object, and then we're accessing them like *props.rename*:
+```
+ export function MediBtn(props) {
+    return (
+        <div>
+            <p>{props.mediTxt}</p>
+            <button onClick={() => props.rename('novo ime')}>rename app title</button>
+        </div>
+        )
+```
