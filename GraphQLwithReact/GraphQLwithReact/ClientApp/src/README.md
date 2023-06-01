@@ -114,3 +114,8 @@ In parent *renameTitle* function is implemented like this:
         setDisplayName(newName)
    }
  ```     
+ 
+ #### "Lifting state up”
+ If you want a few children to share some state (variable...), move state in the parent, and then inject it to that children (parent to child).
+ By moving state up, you’ve shared it between components.
+ 
