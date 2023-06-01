@@ -141,4 +141,4 @@ In parent *renameTitle* function is implemented like this:
 |parent to child (in child)| ```export function MediBtn(propsMedi)```or ```export function MediBtn({ mediTxt }) ``` |```  @Input() mediTxt;```  |
 |child to parent (in parent)|```  <MediBtn rename={renameTitle}></MediBtn> ``` |``` <MediBtn (rename)="renameTitle($event)"></MediBtn> ``` |
 |child to parent (in child)|```<button onClick={() => propsMedi.rename('novo ime')}>rename app title</button>``` |``` @Output() rename = new EventEmitter<string>(); this.rename.next('novo ime')  ```|
-|lifecycle of component|   mounting -> updating -> unmounting  | ngOnInit -> ngDoCheck: ngAfterViewInit -> ngOnDestroy  |
+|lifecycle of component|   mounting -> updating -> unmounting  | ngOnChanges -> ngOnInit -> ngDoCheck (ex. ngAfterViewInit) -> ngOnDestroy  |
