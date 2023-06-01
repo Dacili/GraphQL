@@ -65,9 +65,12 @@ export class Counter extends Component {
       ```
       <button onClick={() => handleClick('some text or object')}>
         ```
-   #### Add state to your component
-   If you want your component to “remember” some information and display it, you need state.
-   ```
+   #### Hooks
+   Functions starting with *use* are called Hooks. You can also write your own Hooks by combining the existing ones.
+   ##### Add state to your component
+   If you want your component to “remember” some information and display it, you need state.  
+   **useState** is hook which declares a state variable that you can update directly  
+   ``` 
    import React, { Component, useState } from 'react';
    ```    
    
@@ -119,3 +122,7 @@ In parent *renameTitle* function is implemented like this:
  If you want a few children to share some state (variable...), move state in the parent, and then inject it to that children (parent to child).
  By moving state up, you’ve shared it between components.
  
+    
+ #### Lifecycle of component
+ <img src="https://github.com/Dacili/GraphQL/assets/37112852/147ebfb3-14c7-4a9d-a0a7-d8ac1aa5698a"  width="600" height="300">  
+
