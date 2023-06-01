@@ -126,7 +126,7 @@ In parent *renameTitle* function is implemented like this:
  #### Lifecycle of component
  <img src="https://github.com/Dacili/GraphQL/assets/37112852/147ebfb3-14c7-4a9d-a0a7-d8ac1aa5698a"  width="600" height="300">  
  
- #### Similarities with Angular
+ #### Comparison/Similarities with Angular
 |  | React  | Angular |
 | -------------| ------------- | ------------- |
 |binding CSS classes| className  | class  |
