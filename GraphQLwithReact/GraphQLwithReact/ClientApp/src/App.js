@@ -5,7 +5,8 @@ import { Layout } from './components/Layout';
 import './custom.css';
 import MediCard from './components/MediCard'
 
-export function MediBtn(props) {
+export function MediBtn(propsMedi) {
+    //export function MediBtn({ rename }) {
     const [counter, setMediCounter] = useState(0)
     function handleMediClick(param) {
         setMediCounter(counter+1)
@@ -15,7 +16,8 @@ export function MediBtn(props) {
         <div>
         <button onClick={() => handleMediClick('jel proslo')}>Medi btn here</button>
             <p>button is clicked {counter} times</p>
-            <button onClick={() => props.rename('novo ime')}>rename app title</button>
+            <button onClick={() => propsMedi.rename('novo ime')}>rename app title</button>
+            {/*<button onClick={() => rename('novo ime')}>rename app title</button>*/}
         </div>
             )
     //return (<button onClick={handleMediClick}>Medi btn here</button>)
