@@ -125,4 +125,14 @@ In parent *renameTitle* function is implemented like this:
     
  #### Lifecycle of component
  <img src="https://github.com/Dacili/GraphQL/assets/37112852/147ebfb3-14c7-4a9d-a0a7-d8ac1aa5698a"  width="600" height="300">  
+ 
+ #### Similarities with Angular
+|  | React  | Angular |
+| -------------| ------------- | ------------- |
+|binding CSS classes| className  | class  |
+|binding style|  style={{ border: "1pt solid red" }} |style="border: 1pt solid red"  |
+|UI| JSX  | HTML file  |
+|click event without params|  onClick={handleClick}  |  (click)="handleClick()"  |
+|click event w params|   onClick={() => handleClick('some text or object')  | (click)="handleClick('some text')"  |
+ 
 
