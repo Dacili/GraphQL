@@ -139,5 +139,5 @@ In parent *renameTitle* function is implemented like this:
 |updating variable|   setDisplayName(newName)  | this.displayName=newName;  |
 |parent to child (in parent)|  ```<MediBtn mediTxt="this is my first card"></MediBtn>  ``` | ``` <MediBtn [mediTxt]="this is my first card"></MediBtn>  ``` |
 |parent to child (in child)| ```export function MediBtn(propsMedi)```or ```export function MediBtn({ mediTxt }) ``` |```  @Input() mediTxt;```  |
-|child to parent (in parent)|``` className ``` |``` class ``` |
-|child to parent (in child)|``` className``` |``` class  ```|
+|child to parent (in parent)|```  <MediBtn rename={renameTitle}></MediBtn> ``` |``` <MediBtn (rename)="renameTitle($event)"></MediBtn> ``` |
+|child to parent (in child)|```<button onClick={() => propsMedi.rename('novo ime')}>rename app title</button>``` |``` @Output() rename = new EventEmitter<string>(); this.rename.next('novo ime')  ```|
