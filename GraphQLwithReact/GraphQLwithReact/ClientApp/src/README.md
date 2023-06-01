@@ -1,5 +1,9 @@
-# React
-### More detailed info from official documentation on https://react.dev/learn   
+# React  
+<img src="https://github.com/Dacili/GraphQL/assets/37112852/58fcd616-7ded-4fda-a6ed-f691e8c38030"  width="250" height="90">  
+
+### More detailed info from official documentation on https://react.dev/learn  
+
+
 React is a free and open-source front-end JavaScript library for building user interfaces based on components.  <br/><br/>
 #### Components
 In react we have 2 types of **components**:
@@ -52,15 +56,22 @@ export class Counter extends Component {
    ```
    
    #### Handling events  
-   If we want to bind some variables, or function to the JSX, we omit them with curly braces {}, like here:  
-   <img src="https://github.com/Dacili/GraphQL/assets/37112852/3efd5063-a484-4d11-9e72-8f035ffa1a51"  width="250" height="250">  
+   If we want to bind some variables, or function to the JSX, we omit them with curly braces {}, like here:
+   
+   <img src="https://github.com/Dacili/GraphQL/assets/37112852/3efd5063-a484-4d11-9e72-8f035ffa1a51"  width="250" height="250">
+   
+   *Notice that if we are calling function without parameters, we are not adding ()*   
    If we want to respond to click event but with some parameter, we need to add lambda function:  
       ```
       <button onClick={() => handleClick('some text or object')}>
         ```
    #### Add state to your component
-   If you want your component to “remember” some information and display it, you need state.  
-      <img src="https://github.com/Dacili/GraphQL/assets/37112852/6c628aa4-810a-4949-b75a-f4bd488fa9f0"  width="250" height="250">  
+   If you want your component to “remember” some information and display it, you need state.
+   ```
+   import React, { Component, useState } from 'react';
+   ```    
+   
+   <img src="https://github.com/Dacili/GraphQL/assets/37112852/6c628aa4-810a-4949-b75a-f4bd488fa9f0"  width="300" height="300">  
    
 #### Sharing data between components   
 **Parent to child**   
@@ -94,7 +105,7 @@ Child MediBtn: there are 2 ways of using data from the parent:
         </div>
         )
 ```  
-**Child to parent** - take a look at previous code, *rename* props - is actually an example of child to parent:   
+**Child to parent** - take a look at previous code, *rename* props - it's actually an example of child to parent:   
 In parent *renameTitle* function is implemented like this:   
 ```   
  let [displayName, setDisplayName]=useState( 'Prvo ime');
