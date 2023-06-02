@@ -37,25 +37,33 @@ export default function App() {
         setDisplayName(newName)
        //displayName = newName
    }
-
+     // <><h1>{displayName}</h1>
+     //       <br></br>
+     //       <h1>Medi learning React js again hehe</h1>
+     //       <MediCard txt="this is my first card"></MediCard>
+     //       <MediBtn rename={renameTitle}></MediBtn>
+     //       <MediBtn></MediBtn>
+     //       <h3>ođe ide ime usera {user.name}</h3> </>
 
     return (
-        <>
-            <h1>{displayName}</h1>
-            <br></br>
-            <h1>Medi learning React js again hehe</h1>
-            <MediCard txt="this is my first card"></MediCard>
-            <MediBtn rename={renameTitle}></MediBtn>
+       
+           <><h1>{displayName}</h1>
+           <br></br>
+           <h1>Medi learning React js again hehe</h1>
+         <MediCard txt="this is my first card"></MediCard>
+           <MediBtn rename={renameTitle}></MediBtn>
             <MediBtn></MediBtn>
-            <h3>ođe ide ime usera {user.name}</h3>
+           <h3>ođe ide ime usera {user.name}</h3> 
+
+            <Layout>
+                <Routes>
+                    {AppRoutes.map((route, index) => {
+                        const { element, ...rest } = route;
+                        return <Route key={index} {...rest} element={element} />;
+                    })}
+                </Routes>
+            </Layout>
+       
         </>
-        //<Layout>
-        //  <Routes>
-        //    {AppRoutes.map((route, index) => {
-        //      const { element, ...rest } = route;
-        //      return <Route key={index} {...rest} element={element} />;
-        //    })}
-        //  </Routes>
-        //</Layout>
     );
 }
