@@ -142,3 +142,5 @@ In parent *renameTitle* function is implemented like this:
 |child to parent (in parent)|```  <MediBtn rename={renameTitle}></MediBtn> ``` |``` <MediBtn (rename)="renameTitle($event)"></MediBtn> ``` |
 |child to parent (in child)|```<button onClick={() => propsMedi.rename('novo ime')}>rename app title</button>``` |``` @Output() rename = new EventEmitter<string>(); this.rename.next('novo ime')  ```|
 |lifecycle of component|   mounting -> updating -> unmounting  | ngOnChanges -> ngOnInit -> ngDoCheck (ex. ngAfterViewInit) -> ngOnDestroy  |
+|show UI if condition is met| ``` {isLoggedIn && <AdminPanel />} ``` | ``` <AdminPanel *ngIf="isLoggedIn>" ``` |
+|show 1 of 2 UI if condition is met| ```   {isLoggedIn ? ( <AdminPanel />) : ( <LoginForm />)} ``` | ``` <AdminPanel *ngIf="isLoggedIn /><LoginForm *ngIf="!isLoggedIn"/> ``` |
