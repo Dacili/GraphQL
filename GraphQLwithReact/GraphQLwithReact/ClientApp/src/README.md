@@ -144,5 +144,5 @@ In parent *renameTitle* function is implemented like this:
 |lifecycle of component|   componentDidMount (mounting) -> componentDidUpdate (updating) -> componentWillUnmount (unmounting)  | ngOnChanges -> ngOnInit -> ngDoCheck (ex. ngAfterViewInit) -> ngOnDestroy  |
 |show UI if condition is met| ``` {isLoggedIn && <AdminPanel />} ``` | ``` <AdminPanel *ngIf="isLoggedIn>" ``` |
 |show 1 of 2 UI if condition is met| ```   {isLoggedIn ? ( <AdminPanel />) : ( <LoginForm />)} ``` | ``` <AdminPanel *ngIf="isLoggedIn /><LoginForm *ngIf="!isLoggedIn"/> ``` |
-|dependency injection (DI)| have to do it manually, or with library  | built-in  |
+|dependency injection (DI)| have to do it manually, or with library, but not the same as in angular   | built-in  |
 |services| have to do it manually, or with library, but not the same as in angular  | built-in  |
