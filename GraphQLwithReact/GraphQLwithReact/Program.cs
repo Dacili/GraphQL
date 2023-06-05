@@ -20,8 +20,29 @@ builder.Services.AddDbContext<DbContextMediClass>(
 builder.Services.AddGraphQLServer()
     .AddQueryType<MasjidQueryTypes>()
     .AddMutationType<MasjidMutations>();
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        builder =>
+        {
+            //builder 
+            ////.AllowAnyOrigin()
+            //.WithOrigins("https://localhost:44419", "https://localhost:44419/" )
+            //       .AllowAnyMethod()
+            //       .AllowAnyHeader()
+            //       .AllowCredentials()
+            //       .SetIsOriginAllowedToAllowWildcardSubdomains();
+            builder.AllowAnyOrigin().
+          AllowAnyMethod().AllowAnyHeader();
+                     
+        });
 
+
+
+});
 var app = builder.Build();
+
 
 // seed data
 using (var scope = app.Services.CreateScope())
@@ -35,14 +56,17 @@ using (var scope = app.Services.CreateScope())
 if (!app.Environment.IsDevelopment())
 {
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    //app.UseHsts();
 }
 app.MapGraphQL();
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+
+
+
 app.UseRouting();
-
-
+//app.UseStaticFiles();
+app.UseCors(MyAllowSpecificOrigins);
+//app.UseHttpsRedirection();
+app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");

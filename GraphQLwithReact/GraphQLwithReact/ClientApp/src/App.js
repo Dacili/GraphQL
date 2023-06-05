@@ -4,6 +4,7 @@ import AppRoutes from './AppRoutes';
 import { Layout } from './components/Layout';
 import './custom.css';
 import MediCard from './components/MediCard'
+import { useQuery, gql, ApolloClient, InMemoryCache, ApolloProvider} from "@apollo/client"; 
 
 export function MediBtn(propsMedi) {
     //export function MediBtn({ rename }) {
@@ -30,13 +31,19 @@ const user = {
 };
 
 
+const getAllMasjidsQuery = gql`{allMasjids{
+    id,
+  name,
+  city
+  }}`;
 
 export default function App() {
   let [displayName, setDisplayName]=useState( 'Prvo ime');
     function renameTitle(newName) {
         setDisplayName(newName)
        //displayName = newName
-   }
+    }
+    const masjidsData = useQuery(getAllMasjidsQuery)
      // <><h1>{displayName}</h1>
      //       <br></br>
      //       <h1>Medi learning React js again hehe</h1>
@@ -44,10 +51,19 @@ export default function App() {
      //       <MediBtn rename={renameTitle}></MediBtn>
      //       <MediBtn></MediBtn>
      //       <h3>ođe ide ime usera {user.name}</h3> </>
-
+    function showMasjids() {
+        console.log(masjidsData.data.allMasjids)
+    }
     return (
        
-           <><h1>{displayName}</h1>
+       <>
+         
+                <h1>{displayName}</h1>
+            <h3 onClick={showMasjids}>query results for masjids</h3>
+            
+            {masjidsData?.data?.allMasjids?.map(masjid => {
+                return <p key={masjid.id }>{masjid.name}</p>
+                })}
            <br></br>
            <h1>Medi learning React js again hehe</h1>
          <MediCard txt="this is my first card"></MediCard>
@@ -63,7 +79,8 @@ export default function App() {
                     })}
                 </Routes>
             </Layout>
-       
+          
         </>
     );
-}
+} /*  <ApolloProvider client={apolloClient}>*/
+            {/* </ApolloProvider>*/}
