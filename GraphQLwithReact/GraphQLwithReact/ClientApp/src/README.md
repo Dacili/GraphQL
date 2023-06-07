@@ -134,7 +134,8 @@ In parent *renameTitle* function is implemented like this:
 |UI| JSX  | HTML file  |
 |click event without params|  onClick={handleClick}  |  (click)="handleClick()"   |
 |click event w params|   onClick={() => handleClick('some text or object')  | (click)="handleClick('some text')"   |
-|binding variables to UI|   ```<h3>ime usera {user.name}</h3>  ``` |  ```<h3>ime usera {{user.name}}</h3> ```   |
+|binding variables to UI (1 way binding)|   ```<h3>ime usera {user.name}</h3>  ``` |  ```<h3>ime usera {{user.name}}</h3> ```   |
+|2 way binding|   ``` <input value={selectedMasjid?.city} onChange={(event) => {setSelectedMasjid({...selectedMasjid, city: event});}} />  ``` |  with template driven approach ```<input [(ngModel)]="selectedMasjid?.city"/> ```   |
 | variable creation and init| let [displayName, setDisplayName]=useState( 'Prvo ime');  | displayName='Prvo ime'  |
 |updating variable|   setDisplayName(newName)  | this.displayName=newName;  |
 |parent to child (in parent)|  ```<MediBtn mediTxt="this is my first card"></MediBtn>  ``` | ``` <MediBtn [mediTxt]="this is my first card"></MediBtn>  ``` |
