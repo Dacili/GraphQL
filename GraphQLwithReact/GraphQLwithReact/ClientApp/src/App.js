@@ -43,7 +43,15 @@ export default function App() {
         setDisplayName(newName)
        //displayName = newName
     }
-    const masjidsData = useQuery(getAllMasjidsQuery)
+    const { data } = useQuery(getAllMasjidsQuery) // we actually have object of elements,
+    // so if we want specific property of that object we can put name of that property in curly brackets,
+    // it will immediately assign that property, so you will not have to index 1 more additional time in jsx
+    //const { loading, error, data } = useQuery(getAllMasjidsQuery) // getting multiple properties
+
+    const masjidsData = useQuery(getAllMasjidsQuery) // if we don't use {} curly brackets,
+    // then in jsx we will have to access it this way: masjidsData?.data?.allMasjids?.map...
+    // we have additional indexing
+
      // <><h1>{displayName}</h1>
      //       <br></br>
      //       <h1>Medi learning React js again hehe</h1>
@@ -52,7 +60,7 @@ export default function App() {
      //       <MediBtn></MediBtn>
      //       <h3>ođe ide ime usera {user.name}</h3> </>
     function showMasjids() {
-        console.log(masjidsData.data.allMasjids)
+        console.log(data)
     }
     return (
        
@@ -61,7 +69,7 @@ export default function App() {
                 <h1>{displayName}</h1>
             <h3 onClick={showMasjids}>query results for masjids</h3>
             
-            {masjidsData?.data?.allMasjids?.map(masjid => {
+            {data?.allMasjids?.map(masjid => {
                 return <p key={masjid.id }>{masjid.name}</p>
                 })}
            <br></br>
