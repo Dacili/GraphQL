@@ -13,7 +13,7 @@ const root = createRoot(rootElement);
 const apolloClient = new ApolloClient({
     //uri: "https://localhost:7277/",
     uri: "https://localhost:7277/graphql",
-    cache: new InMemoryCache()
+    cache: new InMemoryCache({ addTypename: false })
 })
 
 //apolloClient
