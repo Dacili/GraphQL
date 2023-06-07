@@ -130,7 +130,7 @@ In parent *renameTitle* function is implemented like this:
 |  | React  | Angular |
 | -------------| ------------- | ------------- |
 |binding CSS classes| className  | class  |
-|binding style|  style={{ border: "1pt solid red" }} |style="border: 1pt solid red"  |
+|binding style|  style={{ border: "1pt solid red" }} or {{ marginLeft: "30px" }} if two words |style="border: 1pt solid red" or style="margin-left: 30px" |
 |UI| JSX  | HTML file  |
 |click event without params|  onClick={handleClick}  |  (click)="handleClick()"   |
 |click event w params|   onClick={() => handleClick('some text or object')  | (click)="handleClick('some text')"   |
