@@ -33,9 +33,9 @@ namespace GraphQLwithReact.Repositories
 
         public async Task<Masjid> UpdateMasjidAsync(Masjid masjid)
         {
-            var oldMasjid = dbContextMedi.Masjids.Where(masjid1 => masjid1.Id == masjid.Id).FirstOrDefault();
+            var oldMasjid = dbContextMedi.Masjids.AsNoTracking().Where(masjid1 => masjid1.Id == masjid.Id).FirstOrDefault();
             if ( oldMasjid!= null) {
-                dbContextMedi.Entry(oldMasjid).State = EntityState.Detached;
+                //dbContextMedi.Entry(oldMasjid).State = EntityState.Detached;
             dbContextMedi.Masjids.Update(masjid);
            //var res =
                 await dbContextMedi.SaveChangesAsync();
