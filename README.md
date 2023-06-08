@@ -12,6 +12,8 @@ The test app is about doing CRUD operations on some of the masjids from Sarajevo
 
 # GraphQL
 Is a query language for API.  
+**Queries:** to get the data. (R in CRUD)  
+**Mutations:** to mutate data (CUD in CRUD)    
 -*Over-fetching:* you get more data than you actually need.  
 Ex: you have object of 30 properties. For the specific UI, you only need Id, and Name of that object. So instead of getting only that 2 properties, you get 30.  
 -*Under-fetching:* you get less data than you actually need. Opposite of over-fetching.  
