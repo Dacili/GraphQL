@@ -3,6 +3,7 @@ If you want first to check readme about **React** check this link https://github
 ## About app
 Application is created using **React 18** for the frontend part, and **.Net Core .NET 7** for the backend.  
 **Rsuite** UI library is used for components.   
+**Apollo client** is used in React for Graph QL. Use it to fetch, cache, and modify application data, all while automatically updating your UI.  
 - Url for the frontend is: https://localhost:44419/  
 - for the backend https://localhost:7277/  
 - for the Graph QL https://localhost:7277/graphql/  
