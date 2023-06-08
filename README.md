@@ -11,7 +11,9 @@ If you want first to check readme about **React** check this link https://github
 - for the backend https://localhost:7277/  
 - for the Graph QL https://localhost:7277/graphql/  
    
-The test app is about doing CRUD operations on some of the masjids from Sarajevo. 💜
+The test app is about doing CRUD operations on some of the masjids from Sarajevo. 💜  <br/> <br/>
+For setting up the backend project I was following this blog https://www.c-sharpcorner.com/article/graphql-introduction-and-product-application-using-net-core-7/   
+And for the react graph-ql I was following mostly official documentation: https://www.apollographql.com/docs/react/data/queries
 
 # GraphQL
 Is a query language for API.  
