@@ -33,3 +33,82 @@ https://github.com/Dacili/GraphQL/assets/37112852/eb64b0a1-c1ef-4813-9db3-908d72
 - While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request (you can nest queries, or mutations in 1 request).   
 - With GraphQL we're avoiding over-fetching or under-fetching (it's very good for mobile), in REST we would have to create different APIs to cover all needs.  
 - REST is more established and enjoys widespread support. It’s easier to find more tools, integration, and infrastructure for a more specialized project.
+
+
+#### All examples of queries and mutations  
+Ids are generated every time, so make sure you're using existing Ids..
+```
+query {
+  allMasjids{
+    id,
+  name,
+  city
+  }
+}
+
+
+query {
+   masjidById(id:"d6c9e423-4a6f-45aa-b312-ab4541c6c4d9"){
+    id,
+  name,
+  city
+  }
+}
+
+
+we can do nesting, multiple queries (or mutations) in 1 request:
+query {
+  allMasjids{
+    id,
+  name,
+  city
+  },
+  masjidById(id:"d6c9e423-4a6f-45aa-b312-ab4541c6c4d9"){
+    id,
+  name,
+  city
+  }
+
+}
+
+
+mutation($masjidToAdd: MasjidInput!) {
+   createMasjid(masjid:$masjidToAdd){
+    id, name
+   }
+}
+variable:
+{
+  "masjidToAdd":{
+    "id":"5bed484d-bbe6-439d-bfd4-22ab877410aa",
+    "name":"Hotell Hills masjid",
+    "city":"Sarajevo"
+}  
+}
+
+
+mutation($masjidToAdd: MasjidInput!) {
+   updateMasjid(masjid:$masjidToAdd){
+    id, name, city
+   }
+}
+variable
+{
+  "masjidToAdd":{
+    "id":"5bed484d-bbe6-439d-bfd4-22ab877410aa",
+    "name":"Hotell Hills masjid",
+    "city":"Sarajevo"
+}  
+}
+
+mutation($id: UUID!) {
+   deleteMasjid 
+    ( id:$id){
+      name
+    }
+}
+variable
+{
+  "id":"06cab730-6a16-4eca-9cb0-f9406cada013"
+}
+```
