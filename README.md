@@ -41,6 +41,7 @@ https://github.com/Dacili/GraphQL/assets/37112852/eb64b0a1-c1ef-4813-9db3-908d72
 - While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request (you can nest queries, or mutations in 1 request).   
 - With GraphQL we're avoiding over-fetching or under-fetching (it's very good for mobile), in REST we would have to create different APIs to cover all needs.  
 - REST is more established and enjoys widespread support. It’s easier to find more tools, integration, and infrastructure for a more specialized project.
+![image](https://github.com/Dacili/GraphQL/assets/37112852/89c1ccea-faba-4336-9e0e-0a45bac9dce6)
 
 
 #### All examples of queries and mutations  
