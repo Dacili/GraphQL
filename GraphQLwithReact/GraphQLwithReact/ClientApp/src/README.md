@@ -51,7 +51,9 @@ export class Counter extends Component {
 ##### 3 rules for JSX
 1. Return a single root element
 2. Close all the tags  
-3. camelCase for most of the things (e.g. instead of stroke-width you use strokeWidth)
+3. camelCase for most of the things (e.g. instead of stroke-width you use strokeWidth)  
+
+The browsers don't understand JSX out of the box, so you'll need a JavaScript compiler, such as a Babel, to transform your JSX code into regular JavaScript.  
   #### CSS
   Adding **css classes** to the elements, or **style**:  
   ```
