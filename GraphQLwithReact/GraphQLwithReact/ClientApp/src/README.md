@@ -42,11 +42,16 @@ export class Counter extends Component {
   React component names must always start with a capital letter, while HTML tags must be lowercase.   <br/><br/> 
   
   #### JSX
-  What you have in return statement is called **JSX**. Your component can’t return multiple JSX tags. You have to wrap them into a **shared parent**,   
+  JSX is a syntax extension for JavaScript that allows you to describe your UI in a familiar HTML-like syntax.   
+  What you have in return statement of render function is called **JSX**. Your component can’t return multiple JSX tags. You have to wrap them into a **shared parent**,   
   like a 
   ```  
   <div>...</div> or an empty <>...</>
-  ```    
+  ```
+##### 3 rules for JSX
+1. Return a single root element
+2. Close all the tags  
+3. camelCase for most of the things (e.g. instead of stroke-width you use strokeWidth)
   #### CSS
   Adding **css classes** to the elements, or **style**:  
   ```
