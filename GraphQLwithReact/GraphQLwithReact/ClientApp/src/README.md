@@ -54,6 +54,10 @@ export class Counter extends Component {
 3. camelCase for most of the things (e.g. instead of stroke-width you use strokeWidth)  
 
 The browsers don't understand JSX out of the box, so you'll need a JavaScript compiler, such as a Babel, to transform your JSX code into regular JavaScript.  
+
+#### Props vs state
+Props are read-only information that's passed to components.  
+State is information that can change over time, usually triggered by user interaction.  
   #### CSS
   Adding **css classes** to the elements, or **style**:  
   ```
