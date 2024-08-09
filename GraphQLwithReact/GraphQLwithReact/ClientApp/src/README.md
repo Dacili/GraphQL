@@ -95,17 +95,7 @@ Parent:
 ```   
    
 Child MediBtn: there are 2 ways of using data from the parent:  
-- 1st way - you use exact names that were send with props inside {}:  
-```
- export function MediBtn({ rename, mediTxt }) {
-    return (
-        <div>
-            <p>{mediTxt}</p>
-            <button onClick={() => rename('novo ime')}>rename app title</button>
-        </div>
-            )
-```   
-- 2nd way - you get all props, as object, and then we're accessing them like *props.rename*:
+- 1st way - you get all **props**, as object, and then we're accessing them like *props.rename*:  
 ```
  export function MediBtn(propsMedi) {
     return (
@@ -114,7 +104,20 @@ Child MediBtn: there are 2 ways of using data from the parent:
             <button onClick={() => propsMedi.rename('novo ime')}>rename app title</button>
         </div>
         )
-```  
+```   
+- 2nd way - you use exact names that were send with props inside {} (props is object, use **object destructuring** to explicitly name the values of props inside your function parameters):  
+  ) 
+```
+ export function MediBtn({ rename, mediTxt }) {
+    return (
+        <div>
+            <p>{mediTxt}</p>
+            <button onClick={() => rename('novo ime')}>rename app title</button>
+        </div>
+            )
+```
+
+
 **Child to parent** - take a look at previous code, *rename* props - it's actually an example of child to parent:   
 In parent *renameTitle* function is implemented like this:   
 ```   
